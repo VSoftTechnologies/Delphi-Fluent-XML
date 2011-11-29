@@ -1,4 +1,4 @@
-# # Fluent XML Writer for Delphi
+# Fluent XML Writer for Delphi
 
 This is just a simple fluent api for generating XML. It is based on the work of 
 Primoz Gabrijelcic - GpFluentXml
