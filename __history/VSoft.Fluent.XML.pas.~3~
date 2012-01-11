@@ -316,7 +316,7 @@ end; { TFluentXmlBuilder.Return }
 function TFluentXmlBuilder.SetAttrib(const name, value: string): IFluentXmlBuilder;
 begin
   if ActiveNode.nodeType = NODE_ELEMENT then
-    (ActiveNode as IXMLDOMElement).setAttribute(name,value);
+    IXMLDOMElement(ActiveNode).setAttribute(name,value);
   Result := Self;
 end; { TFluentXmlBuilder.SetAttrib }
 

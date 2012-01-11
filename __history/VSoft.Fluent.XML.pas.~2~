@@ -249,13 +249,8 @@ end; { TFluentXmlBuilder.AddChild }
 
 function TFluentXmlBuilder.AddChild(const name,
   namespace: string): IFluentXmlBuilder;
-var
-  parentNode : IXMLDOMNode;
 begin
-  parentNode := ActiveNode;
-  FxbActiveNode := FxbXmlDoc.createNode(NODE_ELEMENT,name,namespace);
-  parentNode.appendChild(FxbActiveNode);
-  Result := Self;
+
 end;
 
 function TFluentXmlBuilder.AddComment(const comment: string): IFluentXmlBuilder;
@@ -316,7 +311,7 @@ end; { TFluentXmlBuilder.Return }
 function TFluentXmlBuilder.SetAttrib(const name, value: string): IFluentXmlBuilder;
 begin
   if ActiveNode.nodeType = NODE_ELEMENT then
-    (ActiveNode as IXMLDOMElement).setAttribute(name,value);
+    IXMLDOMElement(ActiveNode).setAttribute(name,value);
   Result := Self;
 end; { TFluentXmlBuilder.SetAttrib }
 
