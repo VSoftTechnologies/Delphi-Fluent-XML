@@ -36,7 +36,7 @@ unit VSoft.Fluent.XML;
 interface
 
 uses
-  VSoft.MSXML6;
+  VSoft.MSXML.6;
 
 type
   IFluentXmlBuilder = interface
